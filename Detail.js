@@ -2,8 +2,9 @@ import * as React from 'react';
 import { View, Text, StyleSheet, Button, Image, Linking } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Title,Card } from 'react-native-paper';
-import {MaterialIcons, Entypo } from 'react-native-vector-icons';
-// import karyawan from '../karyawan';
+import email from '../icon/email.jpg';
+import call from '../icon/call.jpg';
+import dollar from '../icon/dollar.png';
 
 const Detail = ({navigation, route}) => {
     const {karyawan} = route.params
@@ -20,7 +21,7 @@ const Detail = ({navigation, route}) => {
                 <Text style={{fontSize:14}}>{karyawan.jabatan}</Text>
             </View>
             <Card style={{margin:3}}
-            onPres={()=>{Linking.openURL('mailto:${karyawan.email}')}}>
+            onPress={()=>{Linking.openURL(`mailto:${karyawan.email}`)}}>
                 <View style={{flexDirection:"row", padding:8}}>
                     {/* <MaterialIcons name="email" size={32} color="#006aff" /> */}
                     <Text style={style.teks}>{karyawan.email}</Text>
